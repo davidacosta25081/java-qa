@@ -4,7 +4,8 @@ import java.util.Scanner;
 public class Numbers {
 
   public static void main(String[] args) { 
-    Scanner scan = new Scanner(System.in);
+    
+	Scanner scan = new Scanner(System.in);
     int num;
     do {
       System.out.println("Please enter a two digit number between 10 and 99");
