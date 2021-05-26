@@ -7,8 +7,8 @@ public class Calculator {
 	static int result;
 
 	public static void main(String[] args) {
-
-		do {
+		
+	      do {
 
 			System.out.println("Enter the two numbers you want to operate on...\nEnter number 1 :");
 			int number1 = Integer.parseInt(scan.nextLine());
@@ -19,6 +19,7 @@ public class Calculator {
 					+ "1. Addition \n2. Substraction \n3. Multiplication\n4. Division \n5. Exit");
 			result = Integer.parseInt(scan.nextLine());
 
+			
 			switch (result) {
 			case 1:
 				System.out.println(addition(number1, number2));
@@ -33,7 +34,7 @@ public class Calculator {
 				break;
 
 			case 4:
-				System.out.println(division(number1, number2));
+				division(number1, number2);
 				break;
 
 			case 5:
@@ -43,11 +44,13 @@ public class Calculator {
 
 		} while (flag);
 
-	}
+    }
 
 	public static int addition(int a, int b) {
+		
 		int result = a + b;
 		return result;
+	
 	}
 
 	public static int substraction(int a, int b) {
@@ -60,13 +63,18 @@ public class Calculator {
 		return result;
 	}
 
-	public static String division(double a, double b) {
-		double result = a / b;
-		if (a < b) {
-			return "INVALID INPUTS";
-		} else {
-			return "" + result;
-		}
-	}
+	public static void division(int a, int b) {
+		
+		try{
+	          int result = a/b;
+	          System.out.println("The result is " + result);
+	      } 
+	      catch (ArithmeticException e) {
+	         System.out.println ("Can't be divided by Zero " + e);
+	      }
+		
+		
+		
+     }
 
 }
